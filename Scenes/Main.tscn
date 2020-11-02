@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/BG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Underground1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Underground2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Wall1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Wall2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+
+[node name="Main" type="Node"]
+
+[node name="Sky" type="Node" parent="."]
+
+[node name="TopLeft" parent="Sky" instance=ExtResource( 1 )]
+position = Vector2( -1037.8, 287.587 )
+
+[node name="TopRight" parent="Sky" instance=ExtResource( 1 )]
+position = Vector2( 809.582, 320.535 )
+offset = Vector2( 243.29, -35.348 )
+
+[node name="BottomRight" parent="Sky" instance=ExtResource( 1 )]
+position = Vector2( 1062.67, 897.123 )
+rotation = 3.14159
+
+[node name="BG" parent="Sky" instance=ExtResource( 1 )]
+position = Vector2( -1044.85, 898.62 )
+rotation = 3.14159
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="UnderFloor" type="Node2D" parent="Floor"]
+position = Vector2( -64.8906, -38.0332 )
+
+[node name="UG1" parent="Floor/UnderFloor" instance=ExtResource( 2 )]
+position = Vector2( -1880.75, 845.922 )
+
+[node name="UG2" parent="Floor/UnderFloor" instance=ExtResource( 3 )]
+position = Vector2( -1394.07, 842.497 )
+
+[node name="UG3" parent="Floor/UnderFloor" instance=ExtResource( 2 )]
+position = Vector2( -925.053, 842.497 )
+
+[node name="UG4" parent="Floor/UnderFloor" instance=ExtResource( 3 )]
+position = Vector2( -452.612, 835.648 )
+
+[node name="UG5" parent="Floor/UnderFloor" instance=ExtResource( 2 )]
+position = Vector2( 30.2822, 832.223 )
+
+[node name="UG6" parent="Floor/UnderFloor" instance=ExtResource( 3 )]
+position = Vector2( 520.568, 828.798 )
+
+[node name="UG7" parent="Floor/UnderFloor" instance=ExtResource( 2 )]
+position = Vector2( 1006.89, 828.798 )
+
+[node name="UG8" parent="Floor/UnderFloor" instance=ExtResource( 3 )]
+position = Vector2( 1493.21, 828.798 )
+
+[node name="UG9" parent="Floor/UnderFloor" instance=ExtResource( 2 )]
+position = Vector2( 1989.98, 832.223 )
+
+[node name="Ground" parent="Floor" instance=ExtResource( 4 )]
+
+[node name="Ground2" parent="Floor" instance=ExtResource( 4 )]
+position = Vector2( 1023.21, 0 )
+
+[node name="Ground3" parent="Floor" instance=ExtResource( 4 )]
+position = Vector2( -1033.59, 0 )
+
+[node name="Ground4" parent="Floor" instance=ExtResource( 4 )]
+position = Vector2( -2081.39, 0 )
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall1" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( -1793.74, 253.516 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 1714.82, 248.732 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1486.7, 443.993 )
